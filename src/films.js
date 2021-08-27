@@ -28,7 +28,7 @@ function moviesAverageOfDirector(movies, director) {
 function orderAlphabetically(movies) {
   let titols =  movies.map(movie => movie.title);
   let titolsOrdenats =  titols.sort();
-  let result = titolsOrdenats.slice (0,19);
+  let result = titolsOrdenats.slice (0,18);
   console.log("EXERCICE 4 ->", result);
   return result;
 }
