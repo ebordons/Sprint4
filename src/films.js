@@ -18,7 +18,7 @@ function moviesAverageOfDirector(movies, director) {
   let totalPuntuacio = directorMovies.reduce ((puntAnterior, puntActual) => {
     return puntAnterior.score + puntActual.score
   });
-  let result = totalPuntuacio/directorMovies.lenght;
+  let result = totalPuntuacio/directorMovies.length;
   console.log("EXERCICE 3 ->", result);
   return result;
   
