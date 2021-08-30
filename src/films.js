@@ -42,10 +42,10 @@ function orderByYear(movies) {
     if (a.year > b.year) {
       return 1;
     }
-    if (a.title.toLowerCase > b.title.toLowerCase) {
+    if (a.title > b.title) {
       return -1;
     }
-    if (a.title.toLowerCase < b.title.toLowerCase) {
+    if (a.title < b.title) {
       return 1;
     }
     return 0
