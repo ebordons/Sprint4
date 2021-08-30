@@ -36,8 +36,21 @@ function orderAlphabetically(movies) {
 // Exercise 5: Order by year, ascending
 function orderByYear(movies) {
   let result = movies.sort((a,b) => {
-    return a.year - b.year;
+    if (a.year < b.year) {
+      return -1;
+    }
+    if (a.year > b.year) {
+      return 1;
+    }
+    if (a.title.toLowerCase < b.title.toLowerCase) {
+      return -1;
+    }
+    if (a.title.toLowerCase > b.title.toLowerCase) {
+      return 1;
+    }
+    return 0
   });
+  
   console.log ("EXERCICE 5 ->", result);
   return result;
 }
