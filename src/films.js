@@ -92,6 +92,11 @@ function hoursToMinutes(movies) {
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
+  if (movies[i].duration.length == 2) {
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
+    durada = duracioHores*60;
+    result[i].duration = durada;
+  }
 }
   return result;
   
