@@ -112,10 +112,9 @@ function hoursToMinutes(movies) {
 function bestFilmOfYear(movies, year) {
   let yearMovies = movies.filter(movie => movie.year == year);
   let yearMoviesOrdenats =  yearMovies.sort((a,b) => {
-    return b.score - a.score;
+    return b.year - a.year;
   });
-  let result = []
-  result = result.push(yearMoviesOrdenats[0]);
+  let result = yearMoviesOrdenats.filter(yearmovie => yearMoviesOrdenats[0]);
   console.log("EXERCICE 4 ->", result);
   return result;
   
