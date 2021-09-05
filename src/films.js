@@ -76,19 +76,19 @@ function hoursToMinutes(movies) {
 
   for (i=0; i<movies.length; i++) {
   if (movies[i].duration.length == 8 ) {
-    duracioHores = parseInt(movies[i].duration[0]);
-    duracioMinuts = parseInt(movies[i].duration[3]) + parseInt(movies[i].duration[4]);
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
+    duracioMinuts = parseInt(movies[i].duration.substr(3,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
   if (movies[i].duration.length == 7) {
-    duracioHores = parseInt(movies[i].duration[0]);
-    duracioMinuts = parseInt(movies[i].duration[3]);
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
+    duracioMinuts = parseInt(movies[i].duration.substr(3,1));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
   if (movies[i].duration.length == 5) {
-    duracioMinuts = parseInt(movies[i].duration[3]) + parseInt(movies[i].duration[4]);
+    duracioMinuts = parseInt(movies[i].duration.substr(0,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
