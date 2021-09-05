@@ -70,9 +70,9 @@ function moviesAverageByCategory(movies, genre) {
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(movies) {
   let result = movies;
-  let duracioHores = 0
-  let duracioMinuts = 0
-  let durada = 0
+  let duracioHores = new Number;
+  let duracioMinuts = new Number;
+  let durada = new Number;
 
   for (i=0; i<movies.length; i++) {
   if (movies[i].duration.length == 8 ) {
