@@ -59,11 +59,16 @@ function orderByYear(movies) {
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(movies, genre) {
   let genreMovies = movies.filter(movie => movie.genre == genre);
-  let genreMoviesScoreNotNull = genreMovies.filter(movie => movie.score.length != 0);
-  let totalPuntuacio = genreMoviesScoreNotNull.reduce ((puntAnterior, puntActual) => {
+  let totalPuntuacio = genreMovies.reduce ((puntAnterior, puntActual) => {
     return puntAnterior.score + puntActual.score
   });
-  let result = totalPuntuacio/genreMoviesScoreNotNull.length;
+  let contador = 0
+  for (i=0; i<genreMovies.length; i++) {
+    if (genreMovies.score == '') {
+      contador +=1
+    }
+  }
+  let result = totalPuntuacio/(genreMovies.length-contador);
   console.log("EXERCICE 6 ->", result);
   return result;
 }
