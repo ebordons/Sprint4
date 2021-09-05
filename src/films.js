@@ -60,6 +60,10 @@ function orderByYear(movies) {
 function moviesAverageByCategory(movies, genre) {
   let genreMovies = movies.filter(movie => movie.genre == genre);
   let totalPuntuacio = genreMovies.reduce ((puntAnterior, puntActual) => {
+    let contador = 0
+    if (puntAnterior == null) {
+      contador+=1;
+    }
     return puntAnterior.score + puntActual.score
   });
   let result = totalPuntuacio/genreMovies.length;
@@ -74,26 +78,26 @@ function hoursToMinutes(movies) {
   let duracioMinuts = new Number;
   let durada = new Number;
 
-  for (i=0; i<movies.length; i++) {
-  if (movies[i].duration.length == 8 ) {
-    duracioHores = parseInt(movies[i].duration.substr(0,1));
-    duracioMinuts = parseInt(movies[i].duration.substr(3,2));
+  for (const movie of movies) {
+  if (movies.duration.length == 8 ) {
+    duracioHores = parseInt(movies.duration.substr(0,1));
+    duracioMinuts = parseInt(movies.duration.substr(3,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies[i].duration.length == 7) {
-    duracioHores = parseInt(movies[i].duration.substr(0,1));
-    duracioMinuts = parseInt(movies[i].duration.substr(3,1));
+  if (movies.duration.length == 7) {
+    duracioHores = parseInt(movies.duration.substr(0,1));
+    duracioMinuts = parseInt(movies.duration.substr(3,1));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies[i].duration.length == 5) {
-    duracioMinuts = parseInt(movies[i].duration.substr(0,2));
+  if (movies.duration.length == 5) {
+    duracioMinuts = parseInt(movies.duration.substr(0,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies[i].duration.length == 2) {
-    duracioHores = parseInt(movies[i].duration.substr(0,1));
+  if (movies.duration.length == 2) {
+    duracioHores = parseInt(movies.duration.substr(0,1));
     durada = duracioHores*60;
     result[i].duration = durada;
   }
