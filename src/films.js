@@ -78,26 +78,26 @@ function hoursToMinutes(movies) {
   let duracioMinuts = new Number;
   let durada = new Number;
 
-  for (const movie of movies) {
-  if (movies.duration.length == 8 ) {
-    duracioHores = parseInt(movies.duration.substr(0,1));
-    duracioMinuts = parseInt(movies.duration.substr(3,2));
+  for (let i=0; i<movies.length; i++) {
+  if (movies[i].duration.length == 8 ) {
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
+    duracioMinuts = parseInt(movies[i].duration.substr(3,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies.duration.length == 7) {
-    duracioHores = parseInt(movies.duration.substr(0,1));
-    duracioMinuts = parseInt(movies.duration.substr(3,1));
+  if (movies[i].duration.length == 7) {
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
+    duracioMinuts = parseInt(movies[i].duration.substr(3,1));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies.duration.length == 5) {
-    duracioMinuts = parseInt(movies.duration.substr(0,2));
+  if (movies[i].duration.length == 5) {
+    duracioMinuts = parseInt(movies[i].duration.substr(0,2));
     durada = duracioHores*60 + duracioMinuts;
     result[i].duration = durada;
   }
-  if (movies.duration.length == 2) {
-    duracioHores = parseInt(movies.duration.substr(0,1));
+  if (movies[i].duration.length == 2) {
+    duracioHores = parseInt(movies[i].duration.substr(0,1));
     durada = duracioHores*60;
     result[i].duration = durada;
   }
