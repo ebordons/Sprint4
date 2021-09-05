@@ -108,7 +108,8 @@ function bestFilmOfYear(movies, year) {
   let yearMoviesOrdenats =  yearMovies.sort((a,b) => {
     return b.year - a.year;
   });
-  let result = yearMoviesOrdenats[0];
+  let result = new Array
+  result = yearMoviesOrdenats[0];
   console.log("EXERCICE 4 ->", result);
   return result;
   
