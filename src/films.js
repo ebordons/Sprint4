@@ -73,23 +73,26 @@ function hoursToMinutes(movies) {
   let duracioHores = 0
   let duracioMinuts = 0
   let durada = 0
-  if (movies.duration.length == 8 ) {
-    duracioHores = movies.duration[0];
-    duracioMinuts = movies.duration[3] + movies.duration[4];
+
+  for (i=0; i<movies.length; i++) {
+  if (movies[i].duration.length == 8 ) {
+    duracioHores = movies[i].duration[0];
+    duracioMinuts = movies[i].duration[3] + movies[i].duration[4];
     durada = duracioHores*60 + duracioMinuts;
-    result.duration = durada;
+    result[i].duration = durada;
   }
-  if (movies.duration.length == 7) {
-    duracioHores = movies.duration[0];
-    duracioMinuts = movies.duration[3];
+  if (movies[i].duration.length == 7) {
+    duracioHores = movies[i].duration[0];
+    duracioMinuts = movies[i].duration[3];
     durada = duracioHores*60 + duracioMinuts;
-    result.duration = durada;
+    result[i].duration = durada;
   }
-  if (movies.duration.length == 5) {
-    duracioMinuts = movies.duration[3] + movies.duration[4];
+  if (movies[i].duration.length == 5) {
+    duracioMinuts = movies[i].duration[3] + movies[i].duration[4];
     durada = duracioHores*60 + duracioMinuts;
-    result.duration = durada;
+    result[i].duration = durada;
   }
+}
   return result;
   
 }
