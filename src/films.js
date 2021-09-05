@@ -35,7 +35,7 @@ function orderAlphabetically(movies) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(movies) {
-  let result = new Array()
+  let result = []
   result = movies.sort((a,b) => {
     if (a.year < b.year) {
       return -1;
@@ -75,7 +75,8 @@ function moviesAverageByCategory(movies, genre) {
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(movies) {
-  let result = movies;
+  let result = [];
+  result = movies;
   let duracioHores = new Number;
   let duracioMinuts = new Number;
   let durada = new Number;
