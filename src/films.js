@@ -69,7 +69,7 @@ function moviesAverageByCategory(movies, genre) {
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(movies) {
-  let result = movies.map(movie => movie);
+  let result = movies;
   let duracioHores = new Number;
   let duracioMinuts = new Number;
   let durada = new Number;
@@ -103,7 +103,14 @@ function hoursToMinutes(movies) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
+function bestFilmOfYear(movies, year) {
+  let yearMovies = movies.filter(movie => movie.year == year);
+  let yearMoviesOrdenats =  yearMovies.sort((a,b) => {
+    return b.year - a.year;
+  });
+  let result = yearMoviesOrdenats[0];
+  console.log("EXERCICE 4 ->", result);
+  return result;
   
 }
 
