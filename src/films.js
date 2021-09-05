@@ -64,7 +64,7 @@ function moviesAverageByCategory(movies, genre) {
   });
   let contador = 0
   for (i=0; i<genreMovies.length; i++) {
-    if (genreMovies.score == '') {
+    if (genreMovies[i].score == '') {
       contador +=1
     }
   }
